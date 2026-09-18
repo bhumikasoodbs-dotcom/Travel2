@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wanderly — Curated Europe, USA & Canada Journeys</title>
+<style>
+:root{--ink:#172033;--muted:#667085;--brand:#0f766e;--brand2:#f59e0b;--cream:#fffaf3;--white:#fff;--line:#e8e8e8;--shadow:0 18px 50px rgba(23,32,51,.10)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:#fff}
+a{text-decoration:none;color:inherit}.container{width:min(1160px,92%);margin:auto}
+nav{position:absolute;z-index:5;top:0;left:0;right:0;padding:20px 0;color:#fff}.navin{display:flex;align-items:center;justify-content:space-between}.logo{font-size:25px;font-weight:900;letter-spacing:-1px}.logo span{color:#fbbf24}.links{display:flex;gap:28px;font-size:14px;font-weight:700}.navcta{padding:11px 18px;border-radius:99px;background:#fff;color:var(--ink)}
+.hero{min-height:720px;color:#fff;display:flex;align-items:center;background:linear-gradient(90deg,rgba(9,20,34,.78),rgba(9,20,34,.28)),url('assets/hero.jpg') center/cover}
+.hero-copy{max-width:690px;padding-top:65px}.eyebrow{display:inline-flex;gap:8px;align-items:center;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);padding:8px 13px;border-radius:99px;font-size:13px;font-weight:800;backdrop-filter:blur(8px)}h1{font-size:clamp(48px,7vw,82px);line-height:.98;letter-spacing:-4px;margin:20px 0}.hero p{font-size:19px;line-height:1.65;max-width:620px;color:#edf2f7}.buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{padding:14px 21px;border-radius:12px;font-weight:800;display:inline-block}.primary{background:#fbbf24;color:#172033}.ghost{border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.08);backdrop-filter:blur(8px)}
+.stats{background:#fff;box-shadow:var(--shadow);border-radius:18px;margin:-42px auto 0;position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);padding:22px 10px}.stat{text-align:center;padding:10px;border-right:1px solid var(--line)}.stat:last-child{border:0}.stat strong{display:block;font-size:25px}.stat small{color:var(--muted)}
+section{padding:90px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:34px}.kicker{color:var(--brand);font-weight:900;text-transform:uppercase;letter-spacing:1.4px;font-size:12px}.section-head h2{font-size:42px;letter-spacing:-2px;margin:8px 0 0}.section-head p{color:var(--muted);max-width:480px;line-height:1.6}
+.offers{background:var(--cream)}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.card{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:0 8px 30px rgba(23,32,51,.05)}.photo{height:225px;background-size:cover;background-position:center;position:relative}.badge{position:absolute;top:14px;left:14px;background:#fff;padding:8px 11px;border-radius:99px;font-size:12px;font-weight:900}.cardbody{padding:22px}.country{font-size:12px;font-weight:900;color:var(--brand);text-transform:uppercase}.card h3{font-size:24px;margin:7px 0}.card p{color:var(--muted);line-height:1.55;font-size:14px}.price{display:flex;justify-content:space-between;align-items:end;margin-top:18px}.price strong{font-size:27px}.price small{color:var(--muted)}.details{display:block;margin-top:18px;border-top:1px solid var(--line);padding-top:17px;font-weight:800;font-size:14px}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:26px}.pill{border:1px solid var(--line);background:#fff;padding:10px 15px;border-radius:99px;font-weight:800;cursor:pointer}.pill.active{background:var(--ink);color:#fff}
+.itinerary{display:grid;grid-template-columns:1.1fr 1fr;gap:55px;align-items:start}.route{border-radius:22px;overflow:hidden;min-height:510px;background:url('assets/route.jpg') center/cover;position:relative}.route:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,20,30,.05),rgba(10,20,30,.72))}.routebox{position:absolute;z-index:1;bottom:0;left:0;right:0;padding:28px;color:#fff}.routebox h3{font-size:32px;margin:5px 0}.days{display:grid;gap:14px}.day{display:grid;grid-template-columns:74px 1fr;gap:18px;padding:17px 0;border-bottom:1px solid var(--line)}.daynum{font-weight:900;color:var(--brand)}.day h4{margin:0 0 5px;font-size:16px}.day p{margin:0;color:var(--muted);line-height:1.5;font-size:14px}
+.perks{background:#f6f8f7}.perkgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.perk{background:#fff;border:1px solid var(--line);border-radius:17px;padding:23px}.icon{font-size:27px}.perk h3{margin:13px 0 7px}.perk p{margin:0;color:var(--muted);font-size:14px;line-height:1.5}
+.testimonial{background:#172033;color:#fff}.quote{font-size:34px;line-height:1.3;max-width:800px;letter-spacing:-1px}.person{margin-top:20px;color:#b9c2cf}.newsletter{background:linear-gradient(135deg,#0f766e,#115e59);color:#fff;border-radius:24px;padding:45px;display:flex;justify-content:space-between;align-items:center;gap:30px}.newsletter h2{font-size:36px;margin:0 0 8px}.newsletter p{margin:0;color:#d9fffa}.form{display:flex;background:#fff;padding:5px;border-radius:12px;min-width:390px}.form input{border:0;outline:0;padding:13px;flex:1;font-size:14px}.form button{border:0;background:#fbbf24;padding:0 18px;border-radius:9px;font-weight:900}
+footer{padding:45px 0;background:#0d1422;color:#c6ceda}.foot{display:flex;justify-content:space-between;gap:30px}.foot strong{color:#fff}.footlinks{display:flex;gap:22px;font-size:14px}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:20;display:none;align-items:center;justify-content:center;padding:20px}.modal.open{display:flex}.modalbox{background:#fff;max-width:720px;width:100%;max-height:90vh;overflow:auto;border-radius:22px;padding:28px}.close{float:right;border:0;background:#eee;border-radius:50%;width:36px;height:36px;font-size:20px}.modalbox h2{margin-top:0}.included{display:grid;grid-template-columns:1fr 1fr;gap:10px;color:var(--muted);font-size:14px}.included div{padding:10px;background:#f7f8fa;border-radius:9px}
+@media(max-width:800px){.links{display:none}.stats,.cards,.perkgrid{grid-template-columns:1fr 1fr}.itinerary{grid-template-columns:1fr}.section-head{display:block}.newsletter{display:block}.form{min-width:0;margin-top:20px}.foot{display:block}.footlinks{margin-top:20px}.hero{min-height:680px}}
+@media(max-width:520px){.stats,.cards,.perkgrid{grid-template-columns:1fr}.stats{margin-top:-25px}.stat{border-right:0;border-bottom:1px solid var(--line)}h1{letter-spacing:-2px}.quote{font-size:26px}.newsletter{padding:28px}.included{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav><div class="container navin"><a class="logo" href="#">wander<span>ly</span></a><div class="links"><a href="#offers">Offers</a><a href="#itineraries">Itineraries</a><a href="#why">Why Wanderly</a><a href="#contact">Contact</a></div><a class="navcta" href="#offers">Explore trips</a></div></nav>
+
+<header class="hero">
+<div class="container"><div class="hero-copy">
+<div class="eyebrow">✈ Curated journeys · Small groups · Handpicked stays</div>
+<h1>Go farther.<br><span style="color:#fbbf24">Feel more.</span></h1>
+<p>Thoughtfully designed holidays across Europe, the USA and Canada — with memorable experiences, comfortable stays and itineraries that leave room for discovery.</p>
+<div class="buttons"><a class="btn primary" href="#offers">View exciting offers</a><a class="btn ghost" href="#itineraries">See sample itinerary ↓</a></div>
+</div></div>
+</header>
+
+<div class="container stats">
+<div class="stat"><strong>25+</strong><small>Curated destinations</small></div>
+<div class="stat"><strong>4.9/5</strong><small>Traveller rating</small></div>
+<div class="stat"><strong>12 yrs</strong><small>Travel expertise</small></div>
+<div class="stat"><strong>24/7</strong><small>Trip assistance</small></div>
+</div>
+
+<section id="offers" class="offers">
+<div class="container">
+<div class="section-head"><div><div class="kicker">Limited-time offers</div><h2>Trips worth packing for.</h2></div><p>From first-time Europe highlights to epic North American road trips, choose a ready-made journey or ask us to tailor it.</p></div>
+<div class="filters"><button class="pill active" data-filter="all">All trips</button><button class="pill" data-filter="Europe">Europe</button><button class="pill" data-filter="USA">USA</button><button class="pill" data-filter="Canada">Canada</button></div>
+<div class="cards" id="cards">
+<article class="card" data-region="Europe"><div class="photo" style="background-image:url('assets/europe.jpg')"><span class="badge">SAVE 15%</span></div><div class="cardbody"><div class="country">Europe · 10 days</div><h3>Grand European Escape</h3><p>Paris, Swiss Alps, Venice & Rome — a classic multi-country journey with iconic sights and local experiences.</p><div class="price"><div><small>from</small><br><strong>₹1,49,999</strong></div><small>per person*</small></div><a class="details" href="#" onclick="openTrip('Europe')">View full itinerary →</a></div></article>
+<article class="card" data-region="USA"><div class="photo" style="background-image:url('assets/usa.jpg')"><span class="badge">FREE city pass</span></div><div class="cardbody"><div class="country">USA · 9 days</div><h3>New York + California</h3><p>Feel the pulse of Manhattan, chase the Pacific coast and finish under the California sun.</p><div class="price"><div><small>from</small><br><strong>₹1,89,999</strong></div><small>per person*</small></div><a class="details" href="#" onclick="openTrip('USA')">View full itinerary →</a></div></article>
+<article class="card" data-region="Canada"><div class="photo" style="background-image:url('assets/canada.jpg')"><span class="badge">₹10K off</span></div><div class="cardbody"><div class="country">Canada · 8 days</div><h3>Rockies & City Lights</h3><p>Toronto, Vancouver and the Canadian Rockies — lakes, mountain drives and unforgettable viewpoints.</p><div class="price"><div><small>from</small><br><strong>₹1,69,999</strong></div><small>per person*</small></div><a class="details" href="#" onclick="openTrip('Canada')">View full itinerary →</a></div></article>
+</div>
+</div>
+</section>
+
+<section id="itineraries">
+<div class="container">
+<div class="section-head"><div><div class="kicker">Sample itinerary</div><h2>Europe, day by day.</h2></div><p>A realistic pace, famous landmarks, free time and a few “only locals know” moments.</p></div>
+<div class="itinerary">
+<div class="route"><div class="routebox"><div class="eyebrow">10 days · 4 cities · 3 countries</div><h3>Paris → Geneva → Venice → Rome</h3><p>Hotels + daily breakfast + selected transfers + guided sightseeing</p></div></div>
+<div class="days">
+<div class="day"><div class="daynum">DAY 01</div><div><h4>Arrive in Paris</h4><p>Airport transfer, hotel check-in and an easy evening around the Seine.</p></div></div>
+<div class="day"><div class="daynum">DAY 02</div><div><h4>Paris classics</h4><p>Eiffel Tower, Louvre area, Tuileries and a golden-hour Seine walk.</p></div></div>
+<div class="day"><div class="daynum">DAY 03</div><div><h4>Paris at your pace</h4><p>Montmartre, cafés and shopping, with optional Versailles add-on.</p></div></div>
+<div class="day"><div class="daynum">DAY 04</div><div><h4>Paris → Geneva</h4><p>Scenic rail journey and evening exploration of Geneva's old town.</p></div></div>
+<div class="day"><div class="daynum">DAY 05</div><div><h4>Lake & Alps day</h4><p>Choose Chamonix/Mont Blanc or a relaxed lakeside Geneva experience.</p></div></div>
+<div class="day"><div class="daynum">DAY 06–07</div><div><h4>Venice</h4><p>Canals, St. Mark's Square, Rialto and a guided hidden-lanes walk.</p></div></div>
+<div class="day"><div class="daynum">DAY 08–10</div><div><h4>Rome finale</h4><p>Colosseum, Vatican City, Trevi Fountain, Trastevere and departure.</p></div></div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="why" class="perks"><div class="container">
+<div class="section-head"><div><div class="kicker">The Wanderly difference</div><h2>Everything planned. Nothing over-planned.</h2></div></div>
+<div class="perkgrid">
+<div class="perk"><div class="icon">🧭</div><h3>Smart itineraries</h3><p>Balanced sightseeing, transfers and downtime — so you experience a place rather than race through it.</p></div>
+<div class="perk"><div class="icon">🏨</div><h3>Handpicked stays</h3><p>Comfortable, well-connected hotels selected for location, reviews and traveller convenience.</p></div>
+<div class="perk"><div class="icon">💳</div><h3>Clear pricing</h3><p>Know what is included, what is optional and what you should budget for before you fly.</p></div>
+<div class="perk"><div class="icon">📞</div><h3>24/7 support</h3><p>Real human assistance before and during your trip for changes, questions and unexpected moments.</p></div>
+</div>
+</div></section>
+
+<section class="testimonial"><div class="container"><div class="kicker" style="color:#fbbf24">Traveller story</div><div class="quote">“We had the freedom to explore, but never had to worry about the logistics. It felt like someone had already thought through the little things.”</div><div class="person">— Ananya & Rohan · Europe Explorer</div></div></section>
+
+<section id="contact"><div class="container"><div class="newsletter"><div><h2>Get the next great deal.</h2><p>Join our list for seasonal offers, visa-ready trip ideas and new itineraries.</p></div><form class="form" onsubmit="event.preventDefault(); alert('Thanks! We’ll be in touch.');"><input type="email" required placeholder="Your email address"><button>Notify me</button></form></div></div></section>
+
+<footer><div class="container foot"><div><strong>wanderly</strong><br><small>Curated journeys from India to the world.</small></div><div class="footlinks"><a href="#offers">Packages</a><a href="#itineraries">Itineraries</a><a href="#contact">Contact</a></div></div></footer>
+
+<div class="modal" id="modal"><div class="modalbox"><button class="close" onclick="closeTrip()">×</button><div id="modalcontent"></div></div></div>
+<script>
+const trips={
+Europe:{title:"Grand European Escape",sub:"10 days · Paris, Geneva, Venice & Rome",price:"₹1,49,999",items:["9 nights accommodation","Daily breakfast","Airport transfers","Inter-city rail/coach transfers","Guided city sightseeing","Selected attraction tickets","24/7 trip assistance"],days:["Paris arrival + Seine evening","Eiffel Tower + Louvre district","Montmartre + free time","Scenic transfer to Geneva","Geneva + optional Chamonix","Venice canals + St. Mark’s","Venice hidden-lanes experience","Rome + Colosseum","Vatican + Trastevere","Departure"]},
+USA:{title:"New York + California",sub:"9 days · New York, Los Angeles & San Francisco",price:"₹1,89,999",items:["8 nights accommodation","Daily breakfast","Domestic flight","Airport transfers","New York city tour","California coast experience","24/7 trip assistance"],days:["Arrive New York","Manhattan highlights","Brooklyn + free evening","Fly to Los Angeles","Hollywood + Santa Monica","Pacific Coast experience","Fly to San Francisco","Golden Gate + city highlights","Departure"]},
+Canada:{title:"Rockies & City Lights",sub:"8 days · Toronto, Vancouver & Banff",price:"₹1,69,999",items:["7 nights accommodation","Daily breakfast","Domestic flight","Airport transfers","Toronto city tour","Rockies sightseeing","Lake Louise & Banff","24/7 trip assistance"],days:["Arrive Toronto","Toronto city highlights","Free day + Niagara option","Fly to Vancouver","Vancouver highlights","Fly/transfer to Rockies","Banff + Lake Louise","Departure"]}
+};
+function openTrip(k){event.preventDefault();const t=trips[k];document.getElementById('modalcontent').innerHTML=`<div class="kicker">${k}</div><h2>${t.title}</h2><p>${t.sub}</p><h3>From ${t.price} <small>per person*</small></h3><h3>What's included</h3><div class="included">${t.items.map(x=>`<div>✓ ${x}</div>`).join('')}</div><h3>Day-by-day</h3>${t.days.map((x,i)=>`<div class="day"><div class="daynum">DAY ${String(i+1).padStart(2,'0')}</div><div><h4>${x}</h4><p>Detailed timing and activity plan shared at booking.</p></div></div>`).join('')}<p style="color:#667085;font-size:12px">*Illustrative starting price. Final pricing varies by travel dates, hotel category, flights, room occupancy and availability. Taxes/visa/insurance exclusions should be confirmed before booking.</p>`;document.getElementById('modal').classList.add('open')}
+function closeTrip(){document.getElementById('modal').classList.remove('open')}
+document.getElementById('modal').addEventListener('click',e=>{if(e.target.id==='modal')closeTrip()});
+document.querySelectorAll('.pill').forEach(p=>p.addEventListener('click',()=>{document.querySelectorAll('.pill').forEach(x=>x.classList.remove('active'));p.classList.add('active');const f=p.dataset.filter;document.querySelectorAll('.card').forEach(c=>c.style.display=(f==='all'||c.dataset.region===f)?'block':'none')}));
+</script>
+</body>
+</html>
